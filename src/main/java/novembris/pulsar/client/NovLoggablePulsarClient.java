@@ -31,7 +31,7 @@ public final class NovLoggablePulsarClient extends NovPulsarClient {
     }
 
     ConsumerBuilder<byte[]> newConsumer() {
-        return newConsumer();
+        return client.newConsumer();
     }
 
     <T> ConsumerBuilder<T> newConsumer(Schema<T> schema) {
