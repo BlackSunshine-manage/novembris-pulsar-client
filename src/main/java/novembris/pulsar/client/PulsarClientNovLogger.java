@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 final class PulsarClientNovLogger {
     private final Logger logger = Logger.getLogger("novembris.pulsar.client.NovLoggablePulsarClient");
 
-    PulsarClientNovLogger(String fileName) {
+    PulsarClientNovLogger(String fileName, String pulsarClientTraceId) {
         try {
             FileHandler fh = new FileHandler(fileName + ".log");
             logger.addHandler(fh);

@@ -11,9 +11,9 @@ class NovLoggablePulsarClient extends NovPulsarClient {
     private final PulsarClient client;
     final PulsarClientNovLogger logger;
 
-    public NovLoggablePulsarClient(String logFileName, String... hosts) {
+    public NovLoggablePulsarClient(String logFileName, String pulsarClientTraceId, String... hosts) {
         super(hosts);
-        logger = new PulsarClientNovLogger(logFileName);
+        logger = new PulsarClientNovLogger(logFileName, pulsarClientTraceId);
         try {
             this.client = super.client.build();
         } catch (PulsarClientException e) {

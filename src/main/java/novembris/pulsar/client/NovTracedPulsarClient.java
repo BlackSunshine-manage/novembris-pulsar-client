@@ -8,8 +8,10 @@ import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 
 public final class NovTracedPulsarClient extends NovLoggablePulsarClient {
-    public NovTracedPulsarClient(String logFileName, String... hosts) {
-        super(logFileName, hosts);
+    public NovTracedPulsarClient(String logFileName,
+                                 String pulsarClientTraceId,
+                                 String... hosts) {
+        super(logFileName, pulsarClientTraceId, hosts);
     }
 
     @Override
