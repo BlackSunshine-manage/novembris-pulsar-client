@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 
-public final class NovLoggablePulsarClient extends NovPulsarClient {
+class NovLoggablePulsarClient extends NovPulsarClient {
     private final PulsarClient client;
-    private final PulsarClientNovLogger logger;
+    final PulsarClientNovLogger logger;
 
     public NovLoggablePulsarClient(String logFileName, String... hosts) {
         super(hosts);
@@ -46,7 +46,9 @@ public final class NovLoggablePulsarClient extends NovPulsarClient {
         return client.newReader(schema);
     }
 
-    /** @deprecated */
+    /**
+     * @deprecated
+     */
     @Deprecated
     <T> TableViewBuilder<T> newTableViewBuilder(Schema<T> schema) {
         return client.newTableViewBuilder(schema);
@@ -64,7 +66,9 @@ public final class NovLoggablePulsarClient extends NovPulsarClient {
         client.updateServiceUrl(serviceUrl);
     }
 
-    /** @deprecated */
+    /**
+     * @deprecated
+     */
     @Deprecated
     CompletableFuture<List<String>> getPartitionsForTopic(String topic) {
         return client.getPartitionsForTopic(topic, true);

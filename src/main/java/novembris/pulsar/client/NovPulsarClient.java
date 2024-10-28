@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-class NovPulsarClient implements QueueClient {
+class NovPulsarClient {
     final ClientBuilder client;
     final String hosts;
 
